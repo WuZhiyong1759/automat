@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pt.mapper.PostMapper" >
+		<insert id="insert" parameterType="com.pt.domain.Post" useGeneratedKeys="true" keyProperty="stu_id" >
+    	INSERT INTO poststu(stu_name,stu_type,stu_qq) VALUES(#{stu_name},#{stu_type},#{stu_qq})
+ 	 	</insert>
+		<update id="update" parameterType="com.pt.domain.Post">
+			UPDATE poststu SET stu_statue =#{stu_statue} WHERE stu_id = #{stu_id}
+		</update>
+		<delete id="delete" parameterType="long">
+			DELETE FROM poststu WHERE stu_id = #{stu_id}		
+		</delete>
+		<select id="findbycode" parameterType="string" resultType="com.pt.domain.Post">
+			SELECT * FROM poststu WHERE stu_code = #{value}		
+		</select>
+		<select id="findbyname" parameterType="string" resultType="com.pt.domain.Post">
+			SELECT * FROM poststu WHERE stu_name = #{value}		
+		</select>
+</mapper>
