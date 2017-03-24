@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pt.mapper.CareerMapper">
+  <select id="findAll" resultType="com.pt.domain.Career">
+			SELECT * FROM career 		
+	</select>
+   <select id="findByType" parameterType="String" resultType="com.pt.domain.Career">
+			SELECT * FROM career WHERE cType = #{value}		
+	</select>
+	<update id="updatecStu" >
+	UPDATE career c ,(SELECT sType,COUNT(*) AS count FROM stu GROUP BY	sType) s  SET c.cStu = s.count where c.cName = s.sType
+	</update>
+	
+</mapper>
