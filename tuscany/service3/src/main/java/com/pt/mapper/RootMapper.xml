@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pt.mapper.RootMapper">
+
+	<select id="findpass" parameterType="String" resultType="com.pt.domain.Root">
+			SELECT * FROM root WHERE rname = #{value}		
+	</select>
+	<insert id="insertroot" parameterType="com.pt.domain.Root" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO root(rname,rpass) values(#{rname},#{rpass})  		
+	</insert>
+</mapper>

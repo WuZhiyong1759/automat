@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">  
+     <bean id="StuService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">  
+        <property name="serviceUrl" value="rmi://127.0.0.1:8088/StuService" />  
+        <property name="serviceInterface"  
+            value="com.pt.service.StuService" />  
+    </bean>  
+    <bean id="RootService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">  
+        <property name="serviceUrl" value="rmi://127.0.0.1:8088/RootService" />  
+        <property name="serviceInterface"  
+            value="com.pt.service.RootService" />  
+    </bean>  
+    <bean id="CareerService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">  
+        <property name="serviceUrl" value="rmi://127.0.0.1:8088/CareerService" />  
+        <property name="serviceInterface"  
+            value="com.pt.service.CareerService" />  
+    </bean>  
+    </beans>  

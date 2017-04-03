@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>   
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
+      xmlns:tuscany="http://tuscany.apache.org/xmlns/sca/1.1"
+       xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			 name="StuService"  targetNamespace="http://StuService">
+   		 <component name="StuComponent">  
+        <implementation.spring location="./spring/spring-tuscany.xml"/>
+        <service name="StuService" >   
+            <tuscany:binding.rmi  uri="rmi://127.0.0.1:8088/StuService"/>  
+        </service>  
+    	</component>  
+    	
+    	<component name="RootComponent"> 
+    	  <implementation.spring location="./spring/spring-tuscany.xml"/>
+    	   <service name="RootService"> 
+            <tuscany:binding.rmi   uri="rmi://127.0.0.1:8088/RootService"/>  
+        </service>   
+    	</component>  
+    	
+    	<component name="CareerComponent">  
+           <implementation.spring location="./spring/spring-tuscany.xml"/>
+            <service name="CareerService" > 
+            <tuscany:binding.rmi   uri="rmi://127.0.0.1:8088/CareerService"/>  
+        </service>   
+		</component>  
+</composite>  

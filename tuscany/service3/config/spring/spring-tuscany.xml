@@ -1,0 +1,17 @@
+<?xml version= "1.0" encoding ="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:sca="http://www.springframework.org/schema/sca"
+      xsi:schemaLocation="http://www.springframework.org/schema/beans
+     http://www.springframework.org/schema/beans/spring-beans.xsd       
+     http://www.springframework.org/schema/sca
+     http://www.osoa.org/xmlns/sca/1.0/spring-sca.xsd" >
+					    <sca:service name="StuService" type="com.pt.service.StuService" target="StuService"/>
+					    <bean id="StuService" name="StuServcie" class="com.pt.service.impl.StuServiceImpl"/>
+					    <sca:service name="RootService" type="com.pt.service.RootService" target="RootService"/>
+					     <bean id="RootService" name="RootServcie" class="com.pt.service.impl.RootServiceImpl"/>
+					     <sca:service  name="CareerService" type="com.pt.service.CareerService" target="CareerService"/>
+					       <bean id="CareerService" name="CareerServcie" class="com.pt.service.impl.CareerServiceImpl"/>
+					   <import resource="spring-dao.xml"/>
+					   <import resource="spring-redis.xml"/>
+</beans>  
